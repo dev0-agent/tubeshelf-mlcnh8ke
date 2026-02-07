@@ -18,7 +18,7 @@ It is automatically updated by dev0 as tasks are completed.
 - [x] ✅ **Add Video UI & Logic**
   Create a dialog/modal component to add a new video. It should accept a YouTube URL, extract the Video ID using regex, and allow the user to enter a custom title (optional). On save, use the Storage Service to persist the new video entry.
 
-- [ ] ⏳ **Library Dashboard (Grid View)**
+- [x] ✅ **Library Dashboard (Grid View)**
   Implement the Home page. Fetch videos from the Storage Service and display them in a responsive grid using shadcn/ui Cards. Display video thumbnails (using `img.youtube.com/vi/{id}/mqdefault.jpg`). Handle the empty state (no videos added).
 
 - [ ] ⏳ **Video Player Page & Routing**

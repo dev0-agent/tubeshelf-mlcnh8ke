@@ -1,20 +1,37 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AppLayout } from "./components/AppLayout";
+import { useEffect, useState } from "react";
+import { Video } from "./types";
+import { getVideos } from "./lib/storage";
+import { VideoGrid } from "./components/VideoGrid";
 
-// Placeholder components for routes
-const Home = () => (
-  <div>
-    <h1 className="text-2xl font-bold">Welcome to TubeShelf</h1>
-    <p className="mt-2 text-muted-foreground">Your private, local library for YouTube learning and notes.</p>
-  </div>
-);
+const LibraryView = () => {
+  const [videos, setVideos] = useState<Video[]>([]);
 
-const Library = () => (
-  <div>
-    <h1 className="text-2xl font-bold">Your Library</h1>
-    <p className="mt-2 text-muted-foreground">Saved videos will appear here.</p>
-  </div>
-);
+  const loadVideos = () => {
+    setVideos(getVideos());
+  };
+
+  useEffect(() => {
+    loadVideos();
+  }, []);
+
+  return (
+    <div className="space-y-6">
+      <div>
+        <h1 className="text-3xl font-bold tracking-tight">Your Library</h1>
+        <p className="text-muted-foreground">
+          Manage and browse your saved YouTube videos.
+        </p>
+      </div>
+      <VideoGrid videos={videos} onVideoAdded={loadVideos} />
+    </div>
+  );
+};
+
+const Home = () => <LibraryView />;
+
+const Library = () => <LibraryView />;
 
 const Settings = () => (
   <div>
