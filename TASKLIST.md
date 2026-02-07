@@ -10,12 +10,12 @@ It is automatically updated by dev0 as tasks are completed.
 - [x] ✅ **Project Foundation & Types**
   Initialize the project structure. Set up React Router with a layout component (header/sidebar). Define TypeScript interfaces for `Video`, `Note`, and `Tag`. Create a basic `env.ts` (even if empty initially) to follow best practices.
 
-- [ ] ⏳ **LocalStorage Service Implementation**
+- [x] ✅ **LocalStorage Service Implementation**
   Create a `storage.ts` service module. This will act as the 'database' layer. Implement methods to: `getVideos`, `addVideo`, `deleteVideo`, `updateVideo` (for adding notes), and `saveToLocalStorage`. Include error handling for quota limits and JSON parsing.
 
 ## Phase 2
 
-- [ ] ⏳ **Add Video UI & Logic**
+- [x] ✅ **Add Video UI & Logic**
   Create a dialog/modal component to add a new video. It should accept a YouTube URL, extract the Video ID using regex, and allow the user to enter a custom title (optional). On save, use the Storage Service to persist the new video entry.
 
 - [ ] ⏳ **Library Dashboard (Grid View)**
