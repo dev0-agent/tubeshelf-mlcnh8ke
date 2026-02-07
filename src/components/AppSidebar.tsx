@@ -10,7 +10,8 @@ import {
   SidebarMenuItem,
   SidebarHeader,
 } from "@/components/ui/sidebar";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AddVideoDialog } from "./AddVideoDialog";
 
 const items = [
   {
@@ -24,11 +25,6 @@ const items = [
     icon: Library,
   },
   {
-    title: "Add Video",
-    url: "/add",
-    icon: PlusCircle,
-  },
-  {
     title: "Settings",
     url: "/settings",
     icon: Settings,
@@ -37,6 +33,7 @@ const items = [
 
 export function AppSidebar() {
   const location = useLocation();
+  const navigate = useNavigate();
 
   return (
     <Sidebar>
@@ -58,6 +55,17 @@ export function AppSidebar() {
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
+              <SidebarMenuItem>
+                <AddVideoDialog
+                  onSuccess={() => navigate("/library")}
+                  trigger={
+                    <SidebarMenuButton>
+                      <PlusCircle />
+                      <span>Add Video</span>
+                    </SidebarMenuButton>
+                  }
+                />
+              </SidebarMenuItem>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>

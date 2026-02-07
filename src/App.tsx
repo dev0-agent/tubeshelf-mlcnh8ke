@@ -16,13 +16,6 @@ const Library = () => (
   </div>
 );
 
-const AddVideo = () => (
-  <div>
-    <h1 className="text-2xl font-bold">Add New Video</h1>
-    <p className="mt-2 text-muted-foreground">Enter a YouTube URL to add a video to your library.</p>
-  </div>
-);
-
 const Settings = () => (
   <div>
     <h1 className="text-2xl font-bold">Settings</h1>
@@ -44,7 +37,6 @@ export function App() {
         <Route path="/" element={<AppLayout />}>
           <Route index element={<Home />} />
           <Route path="library" element={<Library />} />
-          <Route path="add" element={<AddVideo />} />
           <Route path="settings" element={<Settings />} />
           <Route path="*" element={<NotFound />} />
         </Route>
