@@ -7,6 +7,7 @@ export interface Video {
   description?: string;
   addedAt: number; // timestamp
   tags: string[]; // tag IDs
+  notes: Note[];
 }
 
 export interface Note {
