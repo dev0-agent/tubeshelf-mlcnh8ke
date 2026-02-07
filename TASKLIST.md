@@ -7,7 +7,7 @@ It is automatically updated by dev0 as tasks are completed.
 
 ## Phase 1
 
-- [ ] ⏳ **Project Foundation & Types**
+- [x] ✅ **Project Foundation & Types**
   Initialize the project structure. Set up React Router with a layout component (header/sidebar). Define TypeScript interfaces for `Video`, `Note`, and `Tag`. Create a basic `env.ts` (even if empty initially) to follow best practices.
 
 - [ ] ⏳ **LocalStorage Service Implementation**
